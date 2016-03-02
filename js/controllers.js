@@ -9,12 +9,12 @@ myApp.controllers = {
   //////////////////////////
   tabbarPage: function(page) {
     // Set button functionality to open/close the menu.
-    page.querySelector('.menu-button').onclick = function() {
+    page.querySelector('[component="button/menu"]').onclick = function() {
       $('#mySplitter').toggleLeft();
     };
 
     // Set button functionality to push 'new_task.html' page.
-    page.querySelector('.new-task-button').onclick = function() {
+    page.querySelector('[component="button/new-task"]').onclick = function() {
       $('#myNavigator').pushPage('html/new_task.html');
     };
 
@@ -48,7 +48,7 @@ myApp.controllers = {
   ////////////////////////////
   newTaskPage: function(page) {
     // Set button functionality to save a new task.
-    page.querySelector('.save-task-button').onclick = function() {
+    page.querySelector('[component="button/save-task"]').onclick = function() {
       var newTitle = page.querySelector('#title-input').value;
 
       if (newTitle) {
@@ -90,7 +90,7 @@ myApp.controllers = {
     page.querySelector('#urgent-input').checked = element.data.urgent;
 
     // Set button functionality to save an existing task.
-    page.querySelector('.save-task-button').onclick = function() {
+    page.querySelector('[component="button/save-task"]').onclick = function() {
       var newTitle = page.querySelector('#title-input').value;
 
       if (newTitle) {

@@ -4,7 +4,7 @@
     <div class="center">New Task</div>
     <div class="right">
       <ons-if platform="android">
-        <ons-toolbar-button class="save-task-button">
+        <ons-toolbar-button component="button/save-task">
           <ons-icon icon="md-save"></ons-icon>
         </ons-toolbar-button>
       </ons-if>
@@ -51,6 +51,6 @@
   </ons-list>
 
   <ons-if platform="ios other">
-    <ons-button modifier="large" class="save-task-button">Add New Task</ons-button>
+    <ons-button modifier="large" component="button/save-task">Add New Task</ons-button>
   </ons-if>
 </ons-page>
