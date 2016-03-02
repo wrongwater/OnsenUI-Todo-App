@@ -37,7 +37,7 @@ myApp.services = {
       taskItem.data.onCheckboxChange = function(event) {
         myApp.services.animators.swipe(taskItem, function() {
           var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
-          $(listId).appendChild(taskItem);
+          document.querySelector(listId).appendChild(taskItem);
         });
       };
 
@@ -50,7 +50,7 @@ myApp.services = {
 
       // Add functionality to push 'details_task.html' page with the current element as a parameter.
       taskItem.querySelector('.center').onclick = function() {
-        $('#myNavigator')
+        document.querySelector('#myNavigator')
           .pushPage('html/details_task.html',
             {
               animation: 'lift',
@@ -69,7 +69,7 @@ myApp.services = {
         taskItem.classList.add('highlight');
       }
 
-      var pendingList = $('#pending-list');
+      var pendingList = document.querySelector('#pending-list');
       if (taskItem.data.urgent) {
         // Insert urgent task at the top.
         pendingList.insertBefore(taskItem, pendingList.firstChild);
@@ -145,13 +145,13 @@ myApp.services = {
       myApp.services.categories.bindOnCheckboxChange(categoryItem);
 
       // Attach the new category to the corresponding list.
-      $('#custom-category-list').appendChild(categoryItem);
+      document.querySelector('#custom-category-list').appendChild(categoryItem);
     },
 
     // On task creation/update, updates the category list adding new categories if needed.
     updateAdd: function(categoryLabel) {
       var categoryId = myApp.services.categories.parseId(categoryLabel);
-      var categoryItem = $('#menuPage ons-list-item[category-id="' + categoryId + '"]');
+      var categoryItem = document.querySelector('#menuPage ons-list-item[category-id="' + categoryId + '"]');
 
       if (!categoryItem) {
         // If the category doesn't exist already, create it.
@@ -162,11 +162,11 @@ myApp.services = {
     // On task deletion/update, updates the category list removing categories without tasks if needed.
     updateRemove: function(categoryLabel) {
       var categoryId = myApp.services.categories.parseId(categoryLabel);
-      var categoryItem = $('#tabbarPage ons-list-item[category="' + categoryId + '"]');
+      var categoryItem = document.querySelector('#tabbarPage ons-list-item[category="' + categoryId + '"]');
 
       if (!categoryItem) {
         // If there are no tasks under this category, remove it.
-        myApp.services.categories.remove($('#custom-category-list ons-list-item[category-id="' + categoryId + '"]'));
+        myApp.services.categories.remove(document.querySelector('#custom-category-list ons-list-item[category-id="' + categoryId + '"]'));
       }
     },
 
@@ -187,7 +187,7 @@ myApp.services = {
       categoryItem.updateCategoryView = function() {
         var query = '[category="' + (categoryId || '') + '"]';
 
-        var taskItems = $$('#tabbarPage ons-list-item');
+        var taskItems = document.querySelectorAll('#tabbarPage ons-list-item');
         for (var i = 0; i < taskItems.length; i++) {
           taskItems[i].style.display = (allItems || taskItems[i].getAttribute('category') === categoryId) ? '' : 'none';
         }

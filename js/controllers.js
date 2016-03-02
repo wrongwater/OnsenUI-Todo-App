@@ -10,12 +10,12 @@ myApp.controllers = {
   tabbarPage: function(page) {
     // Set button functionality to open/close the menu.
     page.querySelector('[component="button/menu"]').onclick = function() {
-      $('#mySplitter').toggleLeft();
+      document.querySelector('#mySplitter').toggleLeft();
     };
 
     // Set button functionality to push 'new_task.html' page.
     page.querySelector('[component="button/new-task"]').onclick = function() {
-      $('#myNavigator').pushPage('html/new_task.html');
+      document.querySelector('#myNavigator').pushPage('html/new_task.html');
     };
 
     // Change tabbar animation depending on platform.
@@ -64,9 +64,9 @@ myApp.controllers = {
         );
 
         // Set selected category to 'All', refresh and pop page.
-        $('#menuPage ons-list-item ons-input').checked = true;
-        $('#menuPage ons-list-item').updateCategoryView();
-        $('#myNavigator').popPage();
+        document.querySelector('#menuPage ons-list-item ons-input').checked = true;
+        document.querySelector('#menuPage ons-list-item').updateCategoryView();
+        document.querySelector('#myNavigator').popPage();
 
       } else {
         // Show alert if the input title is empty.
@@ -80,7 +80,7 @@ myApp.controllers = {
   ///////////////////////////////
   detailsTaskPage: function(page) {
     // Get the element passed as argument to pushPage.
-    var element = $('#myNavigator').getCurrentPage().options.data.element;
+    var element = document.querySelector('#myNavigator').getCurrentPage().options.data.element;
 
     // Fill the view with the stored data.
     page.querySelector('#title-input').value = element.data.title;
@@ -115,9 +115,9 @@ myApp.controllers = {
             );
 
             // Set selected category to 'All', refresh and pop page.
-            $('#menuPage ons-list-item ons-input').checked = true;
-            $('#menuPage ons-list-item').updateCategoryView();
-            $('#myNavigator').popPage();
+            document.querySelector('#menuPage ons-list-item ons-input').checked = true;
+            document.querySelector('#menuPage ons-list-item').updateCategoryView();
+            document.querySelector('#myNavigator').popPage();
           }
         });
 

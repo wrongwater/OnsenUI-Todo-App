@@ -1,13 +1,9 @@
-// Set up some shortcuts.
-window.$ = document.querySelector.bind(document);
-window.$$ = document.querySelectorAll.bind(document);
-
-// Our app logic.
+// App logic.
 window.myApp = {};
 
 ons.ready(function() {
   // Each page calls its own initialization controller.
-  $('#myNavigator').addEventListener('init', function(event) {
+  document.querySelector('#myNavigator').addEventListener('init', function(event) {
     var page = event.target;
 
     if (myApp.controllers.hasOwnProperty(page.id)) {
