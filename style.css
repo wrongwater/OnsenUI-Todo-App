@@ -11,10 +11,6 @@ ons-button[modifier=large] {
   margin: 10px;
 }
 
-.list__header {
-  background-color: white;
-}
-
 .highlight {
   background-color: lightyellow;
   color: rgba(255, 0, 0, 0.7);
