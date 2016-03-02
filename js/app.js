@@ -7,11 +7,11 @@ window.myApp = {};
 
 ons.ready(function() {
   // Each page calls its own initialization controller.
-	$('#myNavigator').addEventListener('init', function(event) {
-		var page = event.target;
+  $('#myNavigator').addEventListener('init', function(event) {
+    var page = event.target;
 
     if (myApp.controllers.hasOwnProperty(page.id)) {
       myApp.controllers[page.id](page);
     }
-	});
+  });
 });
