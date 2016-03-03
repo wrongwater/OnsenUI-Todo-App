@@ -26,8 +26,6 @@ myApp.controllers = {
   // Peding Page Controller //
   //////////////////////////
   pendingTasksPage: function(page) {
-    var list = page.querySelector('#pending-tasks');
-
     // Fill the list with initial data.
     myApp.services.fixtures.forEach(function(data) {
       myApp.services.tasks.create(data);
@@ -38,9 +36,9 @@ myApp.controllers = {
   // Menu Page Controller //
   ////////////////////////
   menuPage: function(page) {
-      // Set functionality for 'No Category' and 'All' default categories respectively.
-      myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item[category-id=""]'));
-      myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item:not([category-id])'));
+    // Set functionality for 'No Category' and 'All' default categories respectively.
+    myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item[category-id=""]'));
+    myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item:not([category-id])'));
   },
 
   ////////////////////////////
