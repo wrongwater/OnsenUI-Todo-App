@@ -22,16 +22,6 @@ myApp.controllers = {
     page.querySelector('#myTabbar').setAttribute('animation', ons.platform.isAndroid() ? 'slide' : 'none');
   },
 
-  //////////////////////////
-  // Peding Page Controller //
-  //////////////////////////
-  pendingTasksPage: function(page) {
-    // Fill the list with initial data.
-    myApp.services.fixtures.forEach(function(data) {
-      myApp.services.tasks.create(data);
-    });
-  },
-
   ////////////////////////
   // Menu Page Controller //
   ////////////////////////
