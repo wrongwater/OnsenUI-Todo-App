@@ -27,8 +27,7 @@ myApp.services = {
         '</ons-list-item>'
       ;
 
-
-      // Takes the actual category item.
+      // Takes the actual task item.
       var taskItem = template.firstChild;
       // Store data within the element.
       taskItem.data = data;
@@ -69,14 +68,9 @@ myApp.services = {
         taskItem.classList.add('highlight');
       }
 
+      // Insert urgent tasks at the top and non urgent tasks at the bottom.
       var pendingList = document.querySelector('#pending-list');
-      if (taskItem.data.urgent) {
-        // Insert urgent task at the top.
-        pendingList.insertBefore(taskItem, pendingList.firstChild);
-      } else {
-        // Insert non urgent task at the bottom.
-        pendingList.appendChild(taskItem);
-      }
+      pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
     },
 
     // Modifies the inner data and current view of an existing task.
@@ -87,7 +81,7 @@ myApp.services = {
       }
 
       if (data.category !== taskItem.data.category) {
-        // Modify the item category before.
+        // Modify the item before updating categories.
         taskItem.setAttribute('category', myApp.services.categories.parseId(data.category));
         // Check if it's necessary to create new categories.
         myApp.services.categories.updateAdd(data.category);
