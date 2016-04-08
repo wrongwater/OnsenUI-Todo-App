@@ -16,13 +16,13 @@ myApp.services = {
       template.innerHTML =
         '<ons-list-item tappable category="' + myApp.services.categories.parseId(data.category)+ '">' +
           '<label class="left">' +
-           '<ons-input type="checkbox"></ons-icon>' +
+           '<ons-input type="checkbox"></ons-input>' +
           '</label>' +
           '<div class="center">' +
             data.title +
           '</div>' +
           '<div class="right">' +
-            '<ons-icon style="color: grey" icon="' + (ons.platform.isAndroid() ? 'md-delete' : 'ion-ios-trash-outline') + '"></ons-icon>' +
+            '<ons-icon style="color: grey" icon="ion-ios-trash-outline, material:md-delete"></ons-icon>' +
           '</div>' +
         '</ons-list-item>'
       ;

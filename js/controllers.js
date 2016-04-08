@@ -10,7 +10,7 @@ myApp.controllers = {
   tabbarPage: function(page) {
     // Set button functionality to open/close the menu.
     page.querySelector('[component="button/menu"]').onclick = function() {
-      document.querySelector('#mySplitter').toggleLeft();
+      document.querySelector('#mySplitter').left.toggle();
     };
 
     // Set button functionality to push 'new_task.html' page.
@@ -72,7 +72,7 @@ myApp.controllers = {
   ///////////////////////////////
   detailsTaskPage: function(page) {
     // Get the element passed as argument to pushPage.
-    var element = document.querySelector('#myNavigator').getCurrentPage().options.data.element;
+    var element = page.data.element;
 
     // Fill the view with the stored data.
     page.querySelector('#title-input').value = element.data.title;
