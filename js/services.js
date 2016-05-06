@@ -22,7 +22,7 @@ myApp.services = {
             data.title +
           '</div>' +
           '<div class="right">' +
-            '<ons-icon style="color: grey" icon="ion-ios-trash-outline, material:md-delete"></ons-icon>' +
+            '<ons-icon style="color: grey; padding-left: 4px" icon="ion-ios-trash-outline, material:md-delete"></ons-icon>' +
           '</div>' +
         '</ons-list-item>'
       ;

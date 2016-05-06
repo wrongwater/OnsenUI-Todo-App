@@ -11,6 +11,10 @@ ons-button[modifier=large] {
   margin: 10px;
 }
 
+ons-splitter-side[side="left"] {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .highlight {
   background-color: lightyellow;
   color: rgba(255, 0, 0, 0.7);
