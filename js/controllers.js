@@ -18,6 +18,8 @@ myApp.controllers = {
       element.onclick = function() {
         document.querySelector('#myNavigator').pushPage('html/new_task.html');
       };
+
+      element.show && element.show(); // Fix ons-fab in Safari.
     });
 
     // Change tabbar animation depending on platform.
