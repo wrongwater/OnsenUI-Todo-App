@@ -12,11 +12,10 @@ myApp.services = {
     // Creates a new task and attaches it to the pending task list.
     create: function(data) {
       // Task item template.
-      var template = document.createElement('div');
-      template.innerHTML =
+      var taskItem = ons.createElement(
         '<ons-list-item tappable category="' + myApp.services.categories.parseId(data.category)+ '">' +
           '<label class="left">' +
-           '<ons-input type="checkbox"></ons-input>' +
+           '<ons-checkbox></ons-checkbox>' +
           '</label>' +
           '<div class="center">' +
             data.title +
@@ -25,10 +24,8 @@ myApp.services = {
             '<ons-icon style="color: grey; padding-left: 4px" icon="ion-ios-trash-outline, material:md-delete"></ons-icon>' +
           '</div>' +
         '</ons-list-item>'
-      ;
+      );
 
-      // Takes the actual task item.
-      var taskItem = template.firstChild;
       // Store data within the element.
       taskItem.data = data;
 
@@ -120,20 +117,16 @@ myApp.services = {
       var categoryId = myApp.services.categories.parseId(categoryLabel);
 
       // Category item template.
-      var template = document.createElement('div');
-      template.innerHTML =
+      var categoryItem = ons.createElement(
         '<ons-list-item tappable category-id="' + categoryId + '">' +
           '<div class="left">' +
-            '<ons-input type="radio" name="categoryGroup" input-id="radio-'  + categoryId + '"></ons-input>' +
+            '<ons-radio name="categoryGroup" input-id="radio-'  + categoryId + '"></ons-radio>' +
           '</div>' +
           '<label class="center" for="radio-' + categoryId + '">' +
             (categoryLabel || 'No category') +
           '</label>' +
         '</ons-list-item>'
-      ;
-
-      // Takes the actual category item.
-      var categoryItem = template.firstChild;
+      );
 
       // Adds filtering functionality to this category item.
       myApp.services.categories.bindOnCheckboxChange(categoryItem);

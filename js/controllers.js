@@ -33,6 +33,9 @@ myApp.controllers = {
     // Set functionality for 'No Category' and 'All' default categories respectively.
     myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item[category-id=""]'));
     myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item:not([category-id])'));
+
+    // Change splitter animation depending on platform.
+    document.querySelector('#mySplitter').left.setAttribute('animation', ons.platform.isAndroid() ? 'overlay' : 'reveal');
   },
 
   ////////////////////////////
@@ -57,7 +60,7 @@ myApp.controllers = {
           );
 
           // Set selected category to 'All', refresh and pop page.
-          document.querySelector('#default-category-list ons-list-item ons-input').checked = true;
+          document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
           document.querySelector('#default-category-list ons-list-item').updateCategoryView();
           document.querySelector('#myNavigator').popPage();
 
@@ -109,7 +112,7 @@ myApp.controllers = {
             );
 
             // Set selected category to 'All', refresh and pop page.
-            document.querySelector('#default-category-list ons-list-item ons-input').checked = true;
+            document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
             document.querySelector('#default-category-list ons-list-item').updateCategoryView();
             document.querySelector('#myNavigator').popPage();
           }

@@ -14,8 +14,8 @@
     </div>
   </ons-toolbar>
 
+  <ons-list-title>Modify your task</ons-list-title>
   <ons-list>
-    <ons-list-header>Modify your task</ons-list-header>
     <ons-list-item modifier="nodivider">
       <ons-if platform="ios other" class="left left-label">
         Title
@@ -41,23 +41,24 @@
       </div>
     </ons-list-item>
   </ons-list>
+
+  <ons-list-title>Other options</ons-list-title>
   <ons-list>
-    <ons-list-header>Other options</ons-list-header>
     <ons-list-item modifier="nodivider">
       <label class="center" for="inner-highlight-input">
         Highlight?
       </label>
-      <label class="right">
+      <div class="right">
         <ons-switch id="highlight-input" input-id="inner-highlight-input"></ons-switch>
-      </label>
+      </div>
     </ons-list-item>
     <ons-list-item modifier="nodivider">
       <label class="center" for="inner-urgent-input">
         Is it urgent?
       </label>
-      <label class="right">
+      <div class="right">
         <ons-switch id="urgent-input" input-id="inner-urgent-input" disabled></ons-switch>
-      </label>
+      </div>
     </ons-list-item>
   </ons-list>
 </ons-page>
