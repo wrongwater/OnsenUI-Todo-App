@@ -11,8 +11,8 @@ ons-button[modifier=large] {
   margin: 10px;
 }
 
-ons-splitter-side[side="left"] {
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
+ons-splitter-side[side="left"][animation="overlay"] {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .highlight {
@@ -35,6 +35,7 @@ ons-splitter-side[side="left"] {
 #tabbarPage .list {
   background-color: grey;
   overflow-x: hidden;
+  margin-top: -1px;
   border-bottom: 1px solid #ccc;
 }
 
