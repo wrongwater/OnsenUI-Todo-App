@@ -16,7 +16,7 @@ myApp.services = {
       template.innerHTML =
         '<ons-list-item tappable category="' + myApp.services.categories.parseId(data.category)+ '">' +
           '<label class="left">' +
-           '<ons-input type="checkbox"></ons-input>' +
+           '<ons-checkbox></ons-checkbox>' +
           '</label>' +
           '<div class="center">' +
             data.title +
@@ -124,7 +124,7 @@ myApp.services = {
       template.innerHTML =
         '<ons-list-item tappable category-id="' + categoryId + '">' +
           '<div class="left">' +
-            '<ons-input type="radio" name="categoryGroup" input-id="radio-'  + categoryId + '"></ons-input>' +
+            '<ons-radio name="categoryGroup" input-id="radio-'  + categoryId + '"></ons-radio>' +
           '</div>' +
           '<label class="center" for="radio-' + categoryId + '">' +
             (categoryLabel || 'No category') +
